@@ -9,19 +9,27 @@ Please refer to the [official documentation for BungeeCord](https://www.spigotmc
 Build latest version:
 
 ```bash
-docker build --tag nicholasdille/waterfall .
+docker build \
+    --tag nicholasdille/waterfall \
+    .
 ```
 
 Build with specific version of Waterfall:
 
 ```bash
-docker build --build-arg WATERFALL_VERSION=1.14.4 --tag nicholasdille/waterfall .
+docker build \
+    --build-arg WATERFALL_VERSION=1.14.4 \
+    --tag nicholasdille/waterfall \
+    .
 ```
 
 Build with specific version of Java:
 
 ```bash
-docker build --build-arg JAVA_VERSION=10 --tag nicholasdille/waterfall .
+docker build \
+    --build-arg JAVA_VERSION=10 \
+    --tag nicholasdille/waterfall \
+    .
 ```
 
 ## Launch
