@@ -27,7 +27,12 @@ docker build --build-arg JAVA_VERSION=10 --tag nicholasdille/waterfall .
 ## Launch
 
 ```bash
-docker run -d --name bungee --mount type=bind,source=/opt/minecraft/bungee,target=/var/opt/waterfall -p 25565:25565 nicholasdille/waterfall
+docker run \
+    -d \
+    --name bungee \
+    --mount type=bind,source=/opt/minecraft/bungee,target=/var/opt/waterfall \
+    -p 25565:25565 \
+    nicholasdille/waterfall
 ```
 
 Also see `docker-compose.yml` for integration with [`docker-papermc`](https://github.com/nicholasdille/docker-papermc/).
