@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+
+  bungee:
+    image: nicholasdille/waterfall
+    build:
+      context: .
+    volumes:
+      - /opt/minecraft/bungee:/var/opt/waterfall
+    ports:
+      - 25565:25565
+    restart: always
+
+  lobby:
+    image: nicholasdille/papermc
+    volumes:
+      - /opt/minecraft/lobby:/var/opt/papermc
+    restart: always
+
+  server1:
+    image: nicholasdille/papermc
+    volumes:
+      - /opt/minecraft/server1:/var/opt/papermc
+    restart: always
