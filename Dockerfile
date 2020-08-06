@@ -6,7 +6,7 @@ RUN apk add --update-cache --no-cache \
         curl \
         jq
 RUN if test "${WATERFALL_VERSION}" = "latest"; then \
-        WATERFALL_VERSION=$(curl --silent https://papermc.io/api/v1/waterfall/ | jq --raw-output '.versions[0]'); \
+        WATERFALL_VERSION=$(curl --silent --location https://papermc.io/api/v1/waterfall/ | jq --raw-output '.versions[0]'); \
     fi && \
     curl --silent --location --fail --output waterfall.jar https://papermc.io/api/v1/waterfall/${WATERFALL_VERSION}/latest/download
 
