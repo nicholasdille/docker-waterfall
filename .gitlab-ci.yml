@@ -21,7 +21,7 @@ docker-build:
     - docker:stable-dind
   extends: .docker-login
   script:
-    - docker build --pull --build-arg PAPERMC_VERSION=${CI_COMMIT_REF_NAME} --tag "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME" .
+    - docker build --pull --build-arg WATERFALL_VERSION=${CI_COMMIT_REF_NAME} --tag "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME" .
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
   except:
     - master
